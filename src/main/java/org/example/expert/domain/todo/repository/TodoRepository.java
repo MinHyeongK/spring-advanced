@@ -19,7 +19,7 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
     //        "LEFT JOIN FETCH t.user " +
     //        "WHERE t.id = :todoId")
     @EntityGraph(attributePaths = {"user"})
-    Optional<Todo> findById(@Param("todoId") Long todoId);
+    Optional<Todo> findById(Long todoId);
 
     int countById(Long todoId);
 }
